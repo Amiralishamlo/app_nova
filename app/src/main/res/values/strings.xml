@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">نوا سینما | NovaSinema</string>
+    <string name="brand_title">نوا سینما</string>
+    <string name="brand_subtitle">تماشای آنلاین و دانلود فیلم و سریال</string>
+    <string name="loading_message">در حال اتصال به نوا سینما…</string>
+
+    <!-- صفحه خطای عدم اتصال به اینترنت -->
+    <string name="error_no_internet_title">اتصال به اینترنت برقرار نیست</string>
+    <string name="error_no_internet_desc">لطفاً وضعیت وای‌فای یا اینترنت همراه خود را بررسی کنید و دوباره تلاش نمایید.</string>
+    <string name="btn_retry">تلاش مجدد</string>
+    <string name="btn_open_settings">تنظیمات اینترنت</string>
+
+    <!-- پیام‌های سیستمی -->
+    <string name="press_back_again_to_exit">برای خروج دوباره دکمه بازگشت را بزنید</string>
+    <string name="download_started">دانلود فایل آغاز شد (در نوار اعلان قابل مشاهده است)</string>
+    <string name="download_error">خطا در شروع دانلود؛ لینک در مرورگر باز شد</string>
+    <string name="storage_permission_required">برای دانلود فایل، لطفاً مجوز دسترسی به حافظه را تایید کنید</string>
+</resources>

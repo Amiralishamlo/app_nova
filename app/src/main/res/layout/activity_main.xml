@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cinema_bg_primary"
+    android:layoutDirection="rtl"
+    tools:context=".MainActivity">
+
+    <!-- بخش اصلی WebView همراه با قابلیت کشیدن به پایین برای رفرش -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cinema_bg_primary"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- نوار پیشرفت ظریف در بالای صفحه (فقط هنگام بارگذاری صفحات نمایش داده می‌شود) -->
+    <ProgressBar
+        android:id="@+id/topProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_gravity="top"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0"
+        android:progressBackgroundTint="#00000000"
+        android:progressTint="@color/nova_accent_light"
+        android:visibility="gone" />
+
+    <!-- صفحه خطای قطع اینترنت (دارای طراحی کارت سینمایی و دکمه تلاش مجدد) -->
+    <FrameLayout
+        android:id="@+id/errorOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_splash_gradient"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="24dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_card_surface"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="32dp">
+
+            <ImageView
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:contentDescription="@string/error_no_internet_title"
+                android:src="@drawable/ic_wifi_off" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/error_no_internet_title"
+                android:textColor="@color/text_primary"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/error_no_internet_desc"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRetry"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="26dp"
+                android:background="@drawable/bg_retry_button"
+                android:stateListAnimator="@null"
+                android:text="@string/btn_retry"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnNetworkSettings"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_outline_button"
+                android:stateListAnimator="@null"
+                android:text="@string/btn_open_settings"
+                android:textAllCaps="false"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- اسپلش‌اسکرین اولیه هنگام باز شدن اپلیکیشن -->
+    <FrameLayout
+        android:id="@+id/splashOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_splash_gradient"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <ImageView
+                android:id="@+id/splashLogo"
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:contentDescription="@string/brand_title"
+                android:src="@drawable/ic_cinema_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:letterSpacing="0.02"
+                android:text="@string/brand_title"
+                android:textColor="@color/text_primary"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/brand_subtitle"
+                android:textColor="@color/text_secondary"
+                android:textSize="13.5sp" />
+
+            <ProgressBar
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="36dp"
+                android:indeterminateTint="@color/nova_accent_light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/loading_message"
+                android:textColor="@color/text_muted"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- کانتینر مخصوص پخش تمام‌صفحه ویدیو (HTML5 Fullscreen Video Player) -->
+    <FrameLayout
+        android:id="@+id/fullscreenContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:keepScreenOn="true"
+        android:visibility="gone" />
+
+</FrameLayout>

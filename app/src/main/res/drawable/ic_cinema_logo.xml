@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <!-- دایره بیرونی با هاله قرمز سینمایی -->
+    <path
+        android:fillColor="#26E50914"
+        android:pathData="M48,48m-44,0a44,44 0,1 1,88 0a44,44 0,1 1,-88 0" />
+
+    <!-- حلقه میانی تیره -->
+    <path
+        android:fillColor="#181D2B"
+        android:strokeColor="#E50914"
+        android:strokeWidth="2.5"
+        android:pathData="M48,48m-34,0a34,34 0,1 1,68 0a34,34 0,1 1,-68 0" />
+
+    <!-- نماد پخش فیلم (Play) در مرکز -->
+    <path
+        android:fillColor="#E50914"
+        android:pathData="M40,32L64,48L40,64Z" />
+</vector>

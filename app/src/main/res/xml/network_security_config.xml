@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- الزام اتصال امن HTTPS برای دامنه اصلی سایت -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">novasinema.site</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+
+    <!-- تنظیمات پایه برای سرورهای استریم و دانلود ویدیو (CDN) در اندروید ۸ به بالا -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
